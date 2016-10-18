@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    </head>
+    <body>
+        <form>
+            url
+            <input type ="text" name ="url" id="url" >
+            username
+            <input type="text" name="username" id="username">
+            password
+            <input type="password" name="password" id="password">
+            <input type="button" value="submit" id="submit">
+        </form>
+        <script>
+            $(document).ready(function () {
+                $("#submit").click(function () {
+                    var url = $("#url").val();
+                    var username = $("#username").val();
+                    var password = $("#password").val();
+                    $.ajax({
+                        url: "http://144.76.34.244:7001/cart/carts",
+                        type: 'post',
+                        data: {url: url, username: username, password: password},
+                        success: function (data) {
+                            console.log(success);
+                            $('#output').append(JSON.parse(data));
+                        }
+                    });
+                })
+            });
+        </script>
+    </body>
+</html>
