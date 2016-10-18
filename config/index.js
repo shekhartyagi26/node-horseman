@@ -1,0 +1,1 @@
+config ={ "URL": "http://144.76.34.244:8080/magento/1.9/web/customer/account/" }
